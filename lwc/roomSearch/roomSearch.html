@@ -1,0 +1,45 @@
+<template>
+    <div class="topbar"></div>
+    <div class="slds-card" style="background-color: #efefef;">
+        <div class="slds-container slds-p-around_large">
+            <div class="slds-align_absolute-center slds-p-around_medium">
+                <lightning-button icon-name="utility:search" label="Search Room" variant="inverse"
+                    class="button-card" onclick={showRooms}>
+                </lightning-button>
+            </div> 
+            <div id="selectRoomDetails" class="slds-p-bottom_large">
+                <h6 class="sectionHeader">1. Select Date and Time for your Room</h6>
+                <div class="slds-grid boxLayout slds-m-top_small">
+                    <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                        <div>
+                            <label>Start Date</label>
+                            <lightning-input type="date" class="slds-m-bottom_medium" value ={startdate} 
+                                onchange={handleStartDate}></lightning-input>
+                        </div>
+                        <div>
+                            <label>End Date</label>
+                            <lightning-input type="date" value={enddate} onchange={handleEndDate}></lightning-input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-p-bottom_large">
+                <h6 class="sectionHeader">2. Select Type of Room</h6>
+                <div class="slds-grid boxLayout slds-m-top_small">
+                    <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                        <lightning-combobox label="Type" value={type} options={typeoptions}
+                            onchange={handleTypeChange}></lightning-combobox>        
+                    </div>
+                </div>
+            </div>
+            <div class="slds-p-bottom_large">
+                <h6 class="sectionHeader">3. Select AC Type</h6>
+                <div class="slds-grid boxLayout slds-m-top_small">
+                    <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                        <lightning-input type="checkbox" label="AC" name="AC" value={ac} onchange={handleACChange}></lightning-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

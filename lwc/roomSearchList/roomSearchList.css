@@ -1,0 +1,12 @@
+.topbar{
+    background-color: #5f4dad;
+    padding : 10px;
+}
+
+.listview{
+    background-color: #f7f7f7;
+}
+.scrollable-view{
+    overflow-y : auto;
+    max-height: 693px;
+}

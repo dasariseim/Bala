@@ -1,0 +1,22 @@
+.topbar{
+    background-color: #5f4dad;
+    padding : 10px;
+}
+
+.button-card{
+    background-color: #5f4dad;
+    color : #fff;
+    font-size: 15px;
+    border-radius: 0.3rem;
+}
+
+.sectionHeader{
+    font-weight: bold;
+}
+
+.boxlayout{
+    box-shadow: 0 0 6px 0 hsla(0, 0%, 66%, .5);
+    border : 1px solid #e1e1e1;
+    background-color: #fff;
+    border-radius: 0.3rem;
+}

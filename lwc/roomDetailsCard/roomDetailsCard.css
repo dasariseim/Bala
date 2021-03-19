@@ -1,0 +1,68 @@
+.car-item{
+    box-shadow : 0 0 6px 0 hsla(0, 0%, 66%, .5);
+    border : 1px solid #e1e1e1;
+}
+
+.avatarCustom{
+    height: 130ox;
+    width : 250px;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 700;
+    margin : 20px 0 10px 20px;
+}
+
+.features{
+    box-sizing: inherit;
+    display: flex;
+    margin-left: 20px;
+}
+
+.feature{
+    margin-right: 40px;
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+}
+
+.svgcustom{
+    height : 20px;
+    width : 20px;
+    display : inline-block;
+}
+
+.price{
+    font-size: 30px;
+    color : #5f4dad;
+    font-weight: 600;
+}
+
+.car-amount{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.button-card{
+    background-color: #5f4dad;
+    font-size: 15px;
+    color: white;
+    border-radius: 0.3rem;
+}
+
+.subspan{
+    font-size: 10px;
+    padding-left: 10px;
+}
+
+.button-card:hover{
+    height:inherit;
+    width: inherit;
+    transition : 2s;
+    box-shadow: 10px 10px 10px #000;
+}

@@ -1,0 +1,104 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/accountNameSearching": [
+                "accountNameSearching/accountNameSearching.js"
+            ],
+            "c/carDetailsCard": [
+                "carDetailsCard/carDetailsCard.js"
+            ],
+            "c/carSearch": [
+                "carSearch/carSearch.js"
+            ],
+            "c/carSearchList": [
+                "carSearchList/carSearchList.js"
+            ],
+            "c/childCmp": [
+                "childCmp/childCmp.js"
+            ],
+            "c/dataServicesExample": [
+                "dataServicesExample/dataServicesExample.js"
+            ],
+            "c/displayAccountRecord": [
+                "displayAccountRecord/displayAccountRecord.js"
+            ],
+            "c/displayAccountUsingFunction": [
+                "displayAccountUsingFunction/displayAccountUsingFunction.js"
+            ],
+            "c/dynamicExample": [
+                "dynamicExample/dynamicExample.js"
+            ],
+            "c/eventParent": [
+                "eventParent/eventParent.js"
+            ],
+            "c/eventSimple": [
+                "eventSimple/eventSimple.js"
+            ],
+            "c/forEachExample": [
+                "forEachExample/forEachExample.js"
+            ],
+            "c/formattedExample": [
+                "formattedExample/formattedExample.js"
+            ],
+            "c/helloWorld": [
+                "helloWorld/helloWorld.js"
+            ],
+            "c/helloWorldLWC": [
+                "helloWorldLWC/helloWorldLWC.js"
+            ],
+            "c/ldsViewForm": [
+                "ldsViewForm/ldsViewForm.js"
+            ],
+            "c/lwcCmp": [
+                "lwcCmp/lwcCmp.js"
+            ],
+            "c/lwcData": [
+                "lwcData/lwcData.js"
+            ],
+            "c/modalCarRental": [
+                "modalCarRental/modalCarRental.js"
+            ],
+            "c/modalRoomRental": [
+                "modalRoomRental/modalRoomRental.js"
+            ],
+            "c/parentCmp": [
+                "parentCmp/parentCmp.js"
+            ],
+            "c/publisherCmp": [
+                "publisherCmp/publisherCmp.js"
+            ],
+            "c/querySelector": [
+                "querySelector/querySelector.js"
+            ],
+            "c/recordViewGetRecord": [
+                "recordViewGetRecord/recordViewGetRecord.js"
+            ],
+            "c/roomDetailsCard": [
+                "roomDetailsCard/roomDetailsCard.js"
+            ],
+            "c/roomSearch": [
+                "roomSearch/roomSearch.js"
+            ],
+            "c/roomSearchList": [
+                "roomSearchList/roomSearchList.js"
+            ],
+            "c/subscriberCmp": [
+                "subscriberCmp/subscriberCmp.js"
+            ],
+            "c/useCase2": [
+                "useCase2/useCase2.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

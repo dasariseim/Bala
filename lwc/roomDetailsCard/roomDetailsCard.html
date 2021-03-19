@@ -1,0 +1,49 @@
+<template>
+    <div class="slds-card car-item">
+        <div class="slds-grid slds-wrap">
+            <div class ="slds-col slds-medium-size_3-of-12">
+                <div class="slds-clearfix slds-p-around_small">
+                  <img src={myRoom.Picture_URL__c} class="avatarCustom" />
+                </div>
+            </div>
+            <div class="slds-col slds-medium-size_6-of-12">
+                <h3>{myRoom.Name__c}</h3>
+                <div class="features">
+                    <div class= "feature">
+                        <span class="slds-m-right_x-small">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcY2UrNp4OEK3Ld_e3jjvUMF1niUVm3egiKg&usqp=CAU"
+                                class="svgcustom" />
+                        </span>
+                        <span>
+                            {myRoom.Type__c}
+                        </span>
+                    </div>                
+                    <template if:true={myRoom.AC__c}>
+                    <div class= "feature">
+                        <span class="slds-m-right_x-small">
+                            <img src="https://img.icons8.com/cotton/2x/air-conditioner--v3.png"
+                                class="svgcustom" />
+                        </span>
+                    </div>
+                </template>
+                </div>
+            </div>
+            <div class="slds-col slds-medium-size_3-of-12 slds-p-around_small">
+                <div class="car-amount slds-p-top_medium">
+                    <div class="price">
+                        <sup class="rupee">*</sup>
+                        <lightning-formatted-number format-style="currency" value={myRoom.Charges_Per_Day__c} 
+                                minimum-fraction-digits="0" maximum-fraction-digits="0">
+                        </lightning-formatted-number>
+                        <sub class="subspan">Per Day</sub>
+                    </div>
+                </div>
+                <div class="slds-align_absolute-center slds-p-top_medium">
+                    <lightning-button icon-name="utility:save" label="Book Now" variant="inverse" 
+                        class="button-card" onclick={bookNowEvent}>
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</template>
