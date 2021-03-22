@@ -1,6 +1,6 @@
 import { api, LightningElement } from 'lwc';
 
-export default class CarDetailsCard extends LightningElement {
+export default class RoomDetailsCard extends LightningElement {
 
     @api
     myRoom;

@@ -12,6 +12,10 @@
         <description>This is a sample message</description>
     </lightningMessageFields>
     <lightningMessageFields>
+        <fieldName>nonac</fieldName> <!-- payload -->
+        <description>This is a sample message</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
         <fieldName>startend</fieldName> <!-- payload -->
         <description>This is a sample message</description>
     </lightningMessageFields>

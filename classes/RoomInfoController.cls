@@ -19,25 +19,36 @@ public with sharing class RoomInfoController {
      }
 
      @AuraEnabled(cacheable = true)
-    public static List<Room_Info__c> filteredRoomList(String type, Boolean ac,Date startdate, Date enddate){
+    public static List<sObject> filteredRoomList(String type, Boolean ac, Boolean nonac, Date startdate, Date enddate, String sortroom){
 
-    System.debug(type+' '+ac);
-    if(type == 'None' || type == ''){
-        type = '%';
+    String query;
+  if(startDate!=null && endDate !=null){
+    query = 'SELECT Id, Name__c, Type__c, Picture_URL__c, Charges_Per_Day__c , AC__c '+
+                        'FROM Room_Info__c '+
+                        'WHERE Id NOT IN '+
+                        '(SELECT Room_Info__c '+
+                          'FROM Room_Booking_Detail__c '+
+                          'WHERE ((Start_Date__c <= :startDate AND End_Date__c >= :startDate) OR '+
+                          '(Start_Date__c<= :endDate AND End_Date__c>= :endDate) OR' +
+                          '(Start_Date__c > :startDate AND End_Date__c<= :endDate) ) )';
+    if(type != 'None' && type != ''){
+         query += ' AND Type__c LIKE \''+type+'\'';
     }
-
-   return [SELECT Id, Name__c, Type__c, Picture_URL__c, Charges_Per_Day__c , AC__c
-                        FROM Room_Info__c
-                        WHERE Id NOT IN 
-                        (SELECT Room_Info__c 
-                          FROM Room_Booking_Detail__c
-                          WHERE ((Start_Date__c <= :startDate AND End_Date__c >= :startDate) OR
-                          (Start_Date__c<= :endDate AND End_Date__c>= :endDate) OR
-                          (Start_Date__c > :startDate AND End_Date__c<= :endDate) ) )
-                        AND Type__c LIKE :type
-                        AND AC__c = :ac];
+     
+    if((ac && !nonac) || (!ac && nonac)){
+      query += ' AND AC__c = '+ac;
+    }
+    query += ' order by Charges_Per_Day__c';
+    if(sortroom == 'hightolow')
+       query += ' desc';
+  }
+  else{
+     query = 'SELECT Id, Name__c, Type__c, Picture_URL__c, Charges_Per_Day__c , AC__c '+
+                        'FROM Room_Info__c order by Charges_Per_Day__c';
+    if(sortroom == 'hightolow')
+       query += ' desc';
+  }
+    System.debug('Query : '+query);
+   return Database.query(query);
     }
 }
-
-
-   

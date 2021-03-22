@@ -2,23 +2,27 @@
     <div class="topbar"></div>
     <div class="slds-card" style="background-color: #efefef;">
         <div class="slds-container slds-p-around_large">
-            <div class="slds-align_absolute-center slds-p-around_medium">
-                <lightning-button icon-name="utility:search" label="Search Room" variant="inverse"
-                    class="button-card" onclick={showRooms}>
+            <div class="slds-grid boxLayout slds-m-top_small">
+                <div class="slds-col slds-size_1-of-3 slds-p-around_medium">
+                    <lightning-combobox label="Sort" value={sort} options={sortoptions}
+                        onchange={handleSortChange}></lightning-combobox>        
+                </div>
+                <lightning-button icon-name="utility:search" label="Clear Filter" variant="success"
+                    class="slds-col slds-float_right topmargin" onclick={clearFilter}>
                 </lightning-button>
-            </div> 
+            </div>
             <div id="selectRoomDetails" class="slds-p-bottom_large">
                 <h6 class="sectionHeader">1. Select Date and Time for your Room</h6>
                 <div class="slds-grid boxLayout slds-m-top_small">
                     <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
                         <div>
                             <label>Start Date</label>
-                            <lightning-input type="date" class="slds-m-bottom_medium" value ={startdate} 
+                            <lightning-input type="date" class="slds-m-bottom_medium" value ={startdate} min={today}
                                 onchange={handleStartDate}></lightning-input>
                         </div>
                         <div>
                             <label>End Date</label>
-                            <lightning-input type="date" value={enddate} onchange={handleEndDate}></lightning-input>
+                            <lightning-input type="date" value={enddate} min={today} onchange={handleEndDate}></lightning-input>
                         </div>
                     </div>
                 </div>
@@ -37,8 +41,14 @@
                 <div class="slds-grid boxLayout slds-m-top_small">
                     <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
                         <lightning-input type="checkbox" label="AC" name="AC" value={ac} onchange={handleACChange}></lightning-input>
+                        <lightning-input type="checkbox" label="Non-AC" name="Non-AC" value={nonac} onchange={handleNonACChange}></lightning-input>
                     </div>
                 </div>
+            </div>
+            <div class="slds-align_absolute-center slds-p-around_medium">
+                <lightning-button icon-name="utility:search" label="Search Room" variant="inverse"
+                    class="button-card" onclick={showRooms}>
+                </lightning-button>
             </div>
         </div>
     </div>

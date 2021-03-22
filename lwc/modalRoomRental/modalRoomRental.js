@@ -30,31 +30,9 @@ export default class ModalCarRental extends LightningElement {
 
         console.log(this.startdate+''+this.enddate);
 
-        if(this.startdate === null || this.enddate === null){
-
-            const evt = new ShowToastEvent({
-                title: 'Error',
-                message: 'Start Date and End Date is mandatory',
-                variant : 'error',
-                mode: 'dismissable'
-            });
-            this.dispatchEvent(evt);
-        } 
-        else if(this.startdate >= this.enddate ){
-
-            const evt = new ShowToastEvent({
-                title: 'Error',
-                message: 'Start Date should not be later than End Date',
-                variant : 'error',
-                mode: 'dismissable'
-            });
-            this.dispatchEvent(evt);
-        } 
-        else{
-
         this.template.querySelector('lightning-record-edit-form').submit(fields);
          
-                this.status = false; }
+                this.status = false;
     }
 
     handleSuccess(event){

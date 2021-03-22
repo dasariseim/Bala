@@ -6,9 +6,11 @@ import filteredRoomList from '@salesforce/apex/RoomInfoController.filteredRoomLi
 export default class CarSearchList extends LightningElement {
     type='';
     ac=false;
+    nonac=false;
     startdate = null;
     enddate = null;
     isOpen = false;
+    sort='';
 
     test;
 
@@ -40,12 +42,19 @@ export default class CarSearchList extends LightningElement {
         if(result.ac != undefined){
             this.ac = result.ac;
         }
+        if(result.nonac != undefined){
+            this.nonac = result.nonac;
+        }
         if(result.startdate != undefined){
             this.startdate = result.startdate;
         }
         if(result.enddate != undefined){
             this.enddate = result.enddate;
         }
+        if(result.sort != undefined){
+            this.sort = result.sort;
+        }
+        
         console.log('Value stored');
         console.log(this.ac)
     }
@@ -53,8 +62,10 @@ export default class CarSearchList extends LightningElement {
     @wire(filteredRoomList, {
         type : '$type',
         ac : '$ac',
+        nonac : '$nonac',
         startdate : '$startdate',
-        enddate : '$enddate'
+        enddate : '$enddate',
+        sortroom : '$sort'
     }) 
     wireddata({error, data}){
         if(data){
